@@ -1,0 +1,95 @@
+.yenn img{
+	margin-left: 60px;
+	cursor: pointer;
+	height: 698px;
+}
+.yenn2{
+	margin-left: 290px;
+}
+.yenn2 img{
+	cursor: pointer;
+	margin-top: 365px;
+}
+.yenn img{
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+.yenn:hover img {
+     cursor: pointer;
+    -webkit-transform:translateX(20px); /* Safari and Chrome */
+    -moz-transform:translateX(20px); /* Firefox */
+    -ms-transform:translateX(20px); /* IE 9 */
+    -o-transform:translateX(20px); /* Opera */
+     transform:translateX(20px);
+}
+.yenn2 img{
+    -webkit-transition: all 1s ease; /* Safari and Chrome */
+    -moz-transition: all 1s ease; /* Firefox */
+    -ms-transition: all 1s ease; /* IE 9 */
+    -o-transition: all 1s ease; /* Opera */
+    transition: all 1s ease;
+}
+.yenn2:hover img {
+     cursor: pointer;
+    -webkit-transform:translateX(-20px); /* Safari and Chrome */
+    -moz-transform:translateX(-20px); /* Firefox */
+    -ms-transform:translateX(-20px); /* IE 9 */
+    -o-transform:translateX(-20px); /* Opera */
+     transform:translateX(-20px);
+}
+#fp-nav ul, .fp-slidesNav ul {
+    margin: 0;
+    padding: 0;
+}
+#fp-nav ul li, .fp-slidesNav ul li {
+    display: block;
+    width: 14px;
+    height: 13px;
+    margin: 12px 7px;
+    position: relative;
+}
+.fp-slidesNav ul li {
+    display: inline-block;
+}
+#fp-nav ul li a, .fp-slidesNav ul li a {
+    display: block;
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    text-decoration: none;
+}
+#fp-nav ul li a span, .fp-slidesNav ul li a span {
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    z-index: 1;
+    height: 11px;
+    width: 11px;
+    border: 2px solid #838282;
+    left: 0;
+    top: 0;
+    margin: 0;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -o-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+#fp-nav ul li a span.visited, .fp-slidesNav ul li a span.visited {
+    background: #838282;
+}
+#fp-nav ul li a.active span, .fp-slidesNav ul li a.active span, #fp-nav ul li:hover a.active span, .fp-slidesNav ul li:hover a.active span {
+    height: 11px;
+    width: 11px;
+    background: #c41010;
+}
+#fp-nav ul li:hover a span, .fp-slidesNav ul li:hover a span {
+    width: 11px;
+    height: 11px;
+    background: #838282;
+}

@@ -1,0 +1,66 @@
+body {
+    background-color: #38585c;
+}
+
+#bg, #bg-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-position: 0 0;
+}
+
+#bg {
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 90;
+}
+
+#bg-mask {
+    background: rgba(0, 0, 0, 0) linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 0%, transparent 20%, transparent 80%, rgba(0, 0, 0, 0.4) 100%) repeat;
+    z-index: 100;
+}
+
+#brand {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    width: 120px;
+    text-align: center;
+    font-family: 'Exo', sans-serif;
+    font-size: 200%;
+    letter-spacing: -2px;
+    z-index: 110;
+}
+
+#brand.shrink {
+    transition: all .6s ease-in-out .4s;
+    opacity: 0;
+}
+
+@media all and (max-width: 767px) {
+    #bg {
+        background-image: url(../img/mask.jpg);
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 1499px) {
+    #bg {
+        background-image: url(../img/mask.jpg);
+    }
+}
+
+@media all and (min-width: 1500px) and (max-width: 2499px) {
+    #bg {
+        background-image: url(../img/mask.jpg);
+    }
+}
+
+@media all and (min-width: 2500px) {
+    #bg {
+        background-image: url(../img/mask.jpg);
+    }
+}

@@ -1,0 +1,600 @@
+body {
+    font-family: 'Cardo', serif;
+    background-color: #38585c;
+}
+
+body > * * {
+    outline: 0 !important;
+}
+
+::selection {
+    color: #000;
+    background: #fff949;
+}
+
+::-moz-selection {
+    color: #000;
+    background: #fff949;
+}
+
+
+
+article h2 {
+    color: #fff;
+    text-transform: uppercase;
+    font-family: 'Unica One', sans-serif;
+}
+
+article h4 {
+    color: #fff;
+    font-family: 'Josefin Sans', sans-serif;
+    line-height: 28px;
+}
+
+article h6 {
+    color: #000;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+    letter-spacing: 2px;
+}
+
+article a {
+    color: #fff;
+    position: relative;
+}
+
+article a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 50%;;
+    left: 0;
+    transition: all .2s ease-in-out 0s;
+    background-color: #fff;
+}
+
+article a:hover {
+    color: #fff;
+    text-decoration: none;
+}
+
+article a:hover::after {
+    width: 0;
+}
+
+#nav-menu {
+    width: 200px;
+    height: auto;
+    position: fixed;
+    right: 0;
+    left: 0;
+    opacity: 0;
+    margin: 0 auto;
+    text-align: center;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all .5s ease-in-out 0s;
+}
+
+#nav-menu.open {
+    z-index: 550;
+    opacity: 1;
+}
+
+#nav-menu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#nav-menu ul li {
+    margin: -40px 0 0;
+    opacity: 0;
+    text-align: center;
+    transition: all .8s cubic-bezier(0.680, -0.550, 0.265, 1.550) .3s;
+}
+
+#nav-menu.open ul li {
+    margin-top: 20px;
+    opacity: 1;
+}
+
+#nav-menu ul li a {
+    color: #f5f5f5;
+    padding: 20px 0;
+    width: 100%;
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-family: 'Oswald', sans-serif;
+}
+
+#nav-menu a::before,
+#nav-menu a::after,
+#nav-menu a > span::before,
+#nav-menu a > span::after {
+    position: absolute;
+    content: '';
+    transition: transform .4s cubic-bezier(.88, .26, .23, .91);
+}
+
+#nav-menu a::before, #nav-menu a::after {
+    right: 0;
+    bottom: 0;
+    background: #f9f2f4;
+}
+
+#nav-menu a::before {
+    width: 100%;
+    height: 1px;
+    transform: translateX(-100%);
+}
+
+#nav-menu a::after {
+    width: 1px;
+    height: 100%;
+    transform: translateY(100%);
+}
+
+#nav-menu a > span {
+    display: block;
+}
+
+#nav-menu a > span::before, #nav-menu a > span::after {
+    left: 0;
+    top: 0;
+    background: #f5f5f5;
+}
+
+#nav-menu a > span::before {
+    width: 100%;
+    height: 1px;
+    transform: translateX(100%);
+}
+
+#nav-menu a > span::after {
+    width: 1px;
+    height: 100%;
+    transform: translateY(-100%);
+}
+
+#nav-menu a:hover::before,
+#nav-menu a:hover::after,
+#nav-menu a:hover > span::before,
+#nav-menu a:hover > span::after {
+    transform: translate(0, 0);
+}
+
+#nav-toggle img{
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+#nav-toggle {
+    cursor: pointer;
+    padding: 15px;
+    position: fixed;
+    z-index: 1000;
+    top: 0;
+    right: -10em;
+    transition: all .3s ease-in-out 0s;
+}
+#nav-toggle .burger {
+    vertical-align: top;
+    display: inline-block;
+    position: relative;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding-top: 2px;
+}
+#nav-toggle .burger .icon-bar {
+    background-color: #c41010;
+    display: block;
+    width: 15px;
+    height: 2px;
+    margin-top: 3px;
+    position: relative;
+    transition: all 200ms ease-out;
+}
+#nav-toggle .burger:after {
+    content: "";
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border: 1px solid #c8c8c8;
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+    vertical-align: top;
+    position: absolute;
+    top: -1px;
+    left: -5px;
+}
+#nav-toggle .burger:hover .icon-bar {
+    background-color: #fff;
+}
+#nav-toggle.visible {
+    right: 0;
+}   
+
+#nav-mask {
+    position: fixed;
+    background: rgba(2, 2, 2, 0.9);
+    width: 100%;
+    height: 0;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    z-index: 500;
+    transition: all .3s ease-in-out .1s;
+}
+
+#nav-mask.open {
+    opacity: 1;
+    height: 100%;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+#fullpage {
+    z-index: 300;
+}
+
+#fullpage.not-visible {
+    display: none;
+}
+
+#fp-nav {
+    z-index: 400;
+}
+
+#fp-nav ul li a.active span {
+    background-color: #c41010;
+}
+
+#fp-nav ul li:hover a.active span {
+    background-color: #fff;
+}
+
+.slimScrollBar {
+    display: none !important;
+}
+
+#hello-page article {
+    opacity: 0;
+}
+
+#hello-page article:first-child {
+    transform: translate(0, -15px);
+}
+
+#hello-page article:nth-child(2),
+#hello-page article:nth-child(3) {
+    transform: translate(0, 15px);
+}
+
+#hello-page article.viewable {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+#hello-page article:first-child.viewable {
+    transition: all .4s ease-in-out 0s;
+}
+
+#hello-page article:nth-child(2).viewable {
+    transition: all .5s ease-in-out 0s;
+}
+
+#hello-page article:nth-child(3).viewable {
+    transition: all .5s ease-in-out .3s;
+}
+
+#hello-page article p .line-through::after {
+    height: 8px;
+    top: calc(50% - 2px);
+    background-color: #16222a;
+}
+
+#yennifer-page article {
+    opacity: 0;
+}
+
+#yennifer-page article:first-child {
+    transform: translate(0, -15px);
+}
+
+#yennifer-page article:nth-child(2) {
+    transform: translate(0, -15px);
+}
+
+#yennifer-page article:nth-child(3) {
+    transform: translate(10px, 0);
+}
+
+#yennifer-page article:nth-child(4) {
+    transform: translate(0, 10px);
+}
+
+#yennifer-page article.viewable {
+    opacity: 1;
+    transform: translate(0, 0);
+}
+
+#yennifer-page article.viewable:first-child {
+    transition: all .4s ease-in-out 0s;
+}
+
+#yennifer-page article:nth-child(2),
+#yennifer-page article:nth-child(3),
+#yennifer-page article:nth-child(4) {
+    transition: all .5s ease-in-out .3s;
+}
+
+#folio-page article {
+    opacity: 0;
+}
+
+#folio-page article:first-child {
+    transform: translate(0, -15px);
+}
+
+#folio-page article.viewable {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+#folio-page article:first-child.viewable {
+    transition: all .4s ease-in-out 0s;
+}
+
+#folio-page article:nth-child(2).viewable,
+#folio-page article:nth-child(3).viewable {
+    transition: all .5s ease-in-out .3s;
+}
+
+#contact-page article {
+    opacity: 0;
+}
+
+#contact-page article:first-child {
+    transform: translate(0, -15px);
+}
+
+#contact-page article:nth-child(2) {
+    transform: translate(0, 10px);
+}
+
+#contact-page article:nth-child(3) {
+    transform: translate(10px, 0);
+}
+
+#contact-page article.viewable {
+    transform: translate(0, 0);
+    opacity: 1;
+}
+
+#contact-page article:first-child.viewable {
+    transition: all .4s ease-in-out 0s;
+}
+
+#contact-page article:nth-child(2).viewable,
+#contact-page article:nth-child(3).viewable {
+    transition: all .5s ease-in-out .3s;
+}
+
+#contact-page .social {
+    text-align: center;
+}
+
+#contact-page article a::after {
+    width: 0;
+}
+
+#contact-page .social a:hover {
+    color: inherit;
+}
+
+@media all and (max-width: 767px) {
+    article h2 {
+        font-size: 20px;
+    }
+
+    article h4 {
+        font-size: 15px;
+        line-height: 21px;
+    }
+
+    .opl {
+        top: 85%;
+    }
+
+    #nav-toggle {
+        padding: 5px;
+    }
+
+    #nav-toggle span, #nav-toggle span::before {
+        width: 14px;
+    }
+
+    #nav-toggle span {
+        margin: 7px 0;
+    }
+
+    #fp-nav {
+        display: none;
+    }
+
+    #hello-page article p .line-through::after {
+        height: 5px;
+        top: calc(50% - 2px);
+    }
+}
+
+@media all and (min-width: 768px) and (max-width: 991px) {
+    article h2 {
+        font-size: 25px;
+    }
+
+    article h4 {
+        font-size: 18px;
+    }
+
+
+    #nav-toggle {
+        padding: 8px;
+    }
+
+    #nav-toggle span, #nav-toggle span::before {
+        width: 18px;
+    }
+
+    #nav-toggle span {
+        margin: 9px 0;
+    }
+
+    #fp-nav {
+        display: none;
+    }
+
+    #hello-page article p .line-through::after {
+        height: 6px;
+        top: calc(50% - 2px);
+    }
+}
+
+@media all and (min-width: 992px) and (max-width: 1199px) {
+    article p {
+        font-size: 20px;
+    }
+
+    article p.special {
+        font-size: 30px;
+        letter-spacing: -3px;
+    }
+
+    #nav-toggle {
+        padding: 10px;
+    }
+
+    #nav-toggle span, #nav-toggle span::before {
+        width: 20px;
+    }
+
+    #nav-toggle span {
+        margin: 10px 0;
+    }
+
+    #hello-page article p .line-through::after {
+        height: 7px;
+        top: calc(50% - 2px);
+    }
+}
+
+.folio-grid {
+    margin-top: 15px;
+}
+
+.folio-grid figure {
+    position: relative;
+    overflow: hidden;
+    max-width: 48%;
+    max-height: 360px;
+    height: 280px;
+    width: 80%;
+    text-align: center;
+    cursor: pointer;
+    margin: 0 10px 10px 0;
+    float: left;
+}
+
+.folio-grid figure figcaption {
+    padding: 2em;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.25em;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.folio-grid figure figcaption::before,
+.folio-grid figure figcaption::after {
+    pointer-events: none;
+}
+
+.folio-grid figure figcaption,
+.folio-grid figure figcaption > a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.folio-grid figure figcaption > a {
+    z-index: 1000;
+    text-indent: 200%;
+    white-space: nowrap;
+    font-size: 0;
+    opacity: 0;
+}
+
+.folio-grid figure h2 {
+    word-spacing: -0.15em;
+    font-weight: 300;
+}
+
+.folio-grid figure h2 span {
+    font-weight: 800;
+}
+
+.folio-grid figure h2,
+.folio-grid figure p {
+    margin: 0;
+}
+
+.folio-grid figure p {
+    letter-spacing: 1px;
+    font-size: 68.5%;
+}
+
+.folio-grid figure.effect-roxy {
+    border: 1px solid rgba(255, 255, 255, .35);
+}
+
+.folio-grid figure.effect-roxy figcaption {
+    padding: 3em;
+    text-align: left;
+}
+
+.folio-grid figure.effect-roxy h2 {
+    padding: 30% 0 10px 0;
+}
+
+.folio-grid figure.effect-roxy p {
+    opacity: 0;
+    transition: opacity 0.35s, transform 0.35s;
+    transform: translate3d(-10px, 0, 0);
+}
+
+.folio-grid figure.effect-roxy:hover {
+    border-color: rgba(255, 255, 255, .9);
+}
+
+.folio-grid figure.effect-roxy:hover p {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+}
